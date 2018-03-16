@@ -12,6 +12,17 @@ Para todas as questões, considere que as variáveis f, g, h, i e j são do tipo
 Utilize os registradores R11, R12, R13, R14 e R15 para armazenar valores temporários.
 
     Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruções: mov.w, add.w e sub.w.
+    f: R4 = f
+    g: R5 = 
+    h: R6 = 
+    i: R7 = 
+    j: R8 = 
+    A: R9 = 
+R11 = 
+R12 = 
+R13 = 
+R14 = 
+R15 = 
 
 (a) f = 0;
 
