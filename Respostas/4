@@ -12,51 +12,103 @@ Para todas as questões, considere que as variáveis f, g, h, i e j são do tipo
 Utilize os registradores R11, R12, R13, R14 e R15 para armazenar valores temporários.
 
     Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruções: mov.w, add.w e sub.w.
-    f: R4 = f
-    g: R5 = 
-    h: R6 = 
-    i: R7 = 
-    j: R8 = 
-    A: R9 = 
+     R4 = f
+     R5 = g
+     R6 = h
+     R7 = i
+     R8 = j
+     R9 = A
 R11 = 
 R12 = 
 R13 = 
-R14 = 
+R14 =
 R15 = 
 
 (a) f = 0;
+mov.w #0, R4
 
 (b) g++;
+add.w #1, R5
 
 (c) h--;
+sub.w #1, R6
 
 (d) i += 2;
+add.w #2, R7
 
 (e) j -= 2;
+sub.w #2, R8
 
     Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruções: mov.w, add.w, sub.w, clr.w, dec.w, decd.w, inc.w e incd.w.
 
 (a) f = 0;
+clr.w R4
 
 (b) g++;
+inc.w R5
 
 (c) h--;
+dec.w R6
 
 (d) i += 2;
+incd.w R7
 
 (e) j -= 2;
+decd.w R8
 
     Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruções: mov.w, add.w, sub.w, clr.w, dec.w, decd.w, inc.w e incd.w.
 
 (a) f *= 2;
+mov.w R4, R11
+add.w R11, R11
+mov.w R11, R4
 
 (b) g *= 3;
+mov.w R5, R12
+add.w R12, R12
+mov.w R12,R13
+add.w R13, R5
 
 (c) h *= 4;
+mov.w R6, R12
+add.w R12, R12
+mov.w R12,R13
+add.w R13, R12
+mov.w R12, R6
 
 (d) A[2] = A[1] + A[0];
+mov.w 1(R9), R11
+mov.w 0(R9), R12
+add.w R11, R12
+mov.w R12, 4(R9)
 
 (e) A[3] = 2*f - 4*h;
+mov.w R4, R11
+add.w R11, R11
+mov.w R11, R4
+
+mov.w R6, R12
+add.w R12, R12
+mov.w R12,R13
+add.w R13, R12
+mov.w R12, R6
+mov.w R6, R14
+sub.w R4, R14
+mov.w R14, 6(R9)
+
 
 (f) A[3] = 2*(f - 2*h);
+mov.w R6, R11
+add.w R11, R11
+mov.w R11, R6
+
+sub R4,R6
+
+mov R6, R15
+add.w R15, R15
+mov.w R15, 6(R9)
+
+
+
+
 
