@@ -1,1 +1,37 @@
-ddddddddcgf
+1.Dada uma variável a do tipo char (1 byte), escreva os trechos de código em C para:
+a. Setar o bit menos significativo, apenas.
+
+P1DIR = 0x0001
+
+b. Setar os dois bits menos significativos, apenas.
+
+P1DIR = 0x0003
+
+c. Somente zerar o terceiro bit menos significativo de a.
+
+P1DIR =~ 0x0004
+
+d. Somente zerar o tyerceiro e o quarto bits menos significativos de a.
+
+P1DIR =~ 0x0012
+
+e. Somente inverter o bit mais significativo de a.
+
+P1OUT =~ 0x0128
+
+
+2. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar os dois LEDs ininterruptamente.
+
+# include <msp450g2553.h>
+void main (void)
+{
+    WDTCTL= WDTPW + WDTHOLD 
+    PIDIR=0x41;
+    P1OUT=0x41;
+    for(;;)
+    {
+    }
+}
+
+3. Considerando a placa Launchpad do MSP430, escreva o código em C para piscar duas vezes os dois LEDs sempre que o usuário pressionar
+o botão.
