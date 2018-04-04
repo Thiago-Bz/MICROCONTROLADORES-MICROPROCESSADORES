@@ -19,6 +19,21 @@ d
 (e) Somente inverter o bit mais significativo de R9. 
 (f) Inverter o nibble mais significativo de R10, e setar o nibble menos significativo de R10.
 
+Respostas:
+
+a. bis.w #1, R5
+
+b. bis.w #3, R6
+
+c. bic.w  #4, R7
+
+d. bic.w #12, R8
+
+e. xor.w #8, R9
+
+f. xor.w #12, R10
+   bis.w #1, R10
+
  "Traduza" o seguinte trecho de código em C para o assembly do MSP430:
 
 2- if(i>j) f = g+h+10;
