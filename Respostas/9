@@ -1,1 +1,29 @@
+#includ <msp430g2553.h>
 
+#define LED BIT0
+#define SAIDA1 BIT1
+#define SAIDA2 BIT2
+#define SAIDA3 BIT3
+#define ENTRADA1 BIT4
+#define ENTRADA2 BIT5
+#define ENTRADA3 BIT6
+
+int main(void)
+{
+  WDTCTL = WDTHOLD|WDTPW;
+  P1DIR |= LED + SAIDA1 + SAIDA2 + SAIDA3;
+  P1DIR &= ~(ENT1+ E2+E3);
+  P1OUT |= ENT1 + E2 +E3;
+  P1REN |= ENT1 + E2 +E3; #RESISTOR DE PULL UP
+  P1OUT &=~led;
+  p1out |= SAIDA1 + SAIDA2 + SAIDA3;
+  p1dir |= LED + SAIDA1 + SAIDA2 + SAIDA3;
+  P1DIR &= ~(ENT1+ E2+E3);
+  while(1)
+  {
+    p1out |= SAIDA1 + SAIDA2 + SAIDA3;
+    p1out &= ~SAIDA1;
+    if(...)
+  }
+  return 0;
+}
